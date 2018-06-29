@@ -29,10 +29,10 @@ if [ -e /tmp/assets/conf/python.packages ] && [ -s /tmp/assets/conf/python.packa
 fi
 
 if [ -d /tmp/assets/sbin/ ] ; then
-    echo '[INFO] Update scripts' && \
-        mv /tmp/assets/sbin/entrypoint.sh /sbin && \
-        mv /tmp/assets/sbin/install.sh /sbin && \
-        mv /tmp/assets/sbin/cleanup.sh /sbin
+    echo '[INFO] Update scripts'
+    [ -f /tmp/assets/sbin/entrypoint.sh ] && mv /tmp/assets/sbin/entrypoint.sh /sbin
+    [ -f /tmp/assets/sbin/install.sh ] && mv /tmp/assets/sbin/install.sh /sbin
+    [ -f /tmp/assets/sbin/cleanup.sh ] && mv /tmp/assets/sbin/cleanup.sh /sbin
 fi
 
 if [ -e /tmp/assets/conf/build-deps.packages ] && [ -s /tmp/assets/conf/build-deps.packages ] ; then

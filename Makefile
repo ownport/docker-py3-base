@@ -1,5 +1,5 @@
 IMAGE_NAME ?= ownport/py3-base
-IMAGE_VERSION ?= 0.1.0-debian
+IMAGE_VERSION ?= 0.1.1-debian
 
 build:
 	docker build -t $(IMAGE_NAME):$(IMAGE_VERSION) .

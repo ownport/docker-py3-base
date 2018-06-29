@@ -2,25 +2,16 @@
 
 set -e
 
-export DEBIAN_FRONTEND=noninteractive
-
-echo "[INFO] Update apt index and upgrade to latest versions for core components" && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends \
-        dialog apt-utils && \
-    apt-get upgrade -y 
-    
-
 if [ -e /tmp/assets/conf/build-deps.packages ] && [ -s /tmp/assets/conf/build-deps.packages ] ; then
 	echo "[INFO] Install build deps" && \
-        apt-get install -y --no-install-recommends \
+        apk add --no-cache --virtual build-deps \
             $(cat /tmp/assets/conf/build-deps.packages) 
 fi
 
-if [ -e /tmp/assets/conf/debian.packages ] && [ -s /tmp/assets/conf/debian.packages ] ; then
-	echo "[INFO] Install Debian packages" && \
-        apt-get install -y --no-install-recommends \
-            $(cat /tmp/assets/conf/debian.packages) 
+if [ -e /tmp/assets/conf/alpine.packages ] && [ -s /tmp/assets/conf/alpine.packages ] ; then
+	echo "[INFO] Install Alpine packages" && \
+        apk add --no-cache \
+            $(cat /tmp/assets/conf/alpine.packages) 
 fi
 
 if [ -e /tmp/assets/conf/python.packages ] && [ -s /tmp/assets/conf/python.packages ] ; then
@@ -37,7 +28,7 @@ fi
 
 if [ -e /tmp/assets/conf/build-deps.packages ] && [ -s /tmp/assets/conf/build-deps.packages ] ; then
 	echo "[INFO] Remove build deps" && \
-        apt-get --purge remove -y $(cat /tmp/assets/conf/build-deps.packages) 
+        apk del build-deps
 fi
 
 echo "[INFO] Remove temporary files" && \

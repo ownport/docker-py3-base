@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM alpine:3.7
 
 COPY assets/ /tmp/assets/
 

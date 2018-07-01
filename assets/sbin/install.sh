@@ -31,9 +31,9 @@ if [ -e /tmp/assets/conf/build-deps.packages ] && [ -s /tmp/assets/conf/build-de
         apk del build-deps
 fi
 
-echo "[INFO] Remove temporary files" && \
-    /sbin/cleanup.sh
-
 echo "[INFO] List of installed python packages" && \
     pip3 freeze
+
+/sbin/cleanup.sh
+
 

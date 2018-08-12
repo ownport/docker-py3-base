@@ -25,8 +25,8 @@ echo '[INFO] Remove temporary files' && \
         /var/lib/apt/lists/*
 
 echo '[INFO] Remove __pycache__ dirs' && \
-    for path in "/usr/lib/python3.5/" \
-                "/usr/local/lib/python3.5/dist-packages"
+    for path in "/usr/lib/python3.6/" \
+                "/usr/local/lib/python3.6/dist-packages"
     do
         cleanup_pycache ${path}
     done 

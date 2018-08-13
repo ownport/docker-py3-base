@@ -35,6 +35,11 @@ if [ -d /tmp/assets/sbin/ ] ; then
     [ -f /tmp/assets/sbin/cleanup.sh ] && mv /tmp/assets/sbin/cleanup.sh /sbin
 fi
 
+if [ -e /tmp/assets/sbin/custom-install.sh ] && [ -s /tmp/assets/sbin/custom-install.sh ] ; then
+	echo "[INFO] Run custom install script: sbin/custom-install.sh" && \
+        ./tmp/assets/sbin/custom-install.sh
+fi
+
 if [ -e /tmp/assets/conf/build-deps.packages ] && [ -s /tmp/assets/conf/build-deps.packages ] ; then
 	echo "[INFO] Remove build deps" && \
         apt-get --purge remove -y $(cat /tmp/assets/conf/build-deps.packages) 

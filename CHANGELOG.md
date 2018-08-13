@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1-ubuntu
+
+- [x] added support of custom install
+
 ## 0.1.0-ubuntu
 
 - [x] migration to ubuntu

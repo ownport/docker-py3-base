@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0-ubuntu
+
+- [x] ubuntu:18.10
+
 ## 0.1.1-ubuntu
 
 - [x] added support of custom install

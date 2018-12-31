@@ -1,5 +1,5 @@
 IMAGE_NAME ?= ownport/py3-base
-IMAGE_VERSION ?= 0.1.1-ubuntu
+IMAGE_VERSION ?= 0.2.0-ubuntu
 
 build:
 	docker build -t $(IMAGE_NAME):$(IMAGE_VERSION) .

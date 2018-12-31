@@ -17,10 +17,10 @@ if [ -e /tmp/assets/conf/build-deps.packages ] && [ -s /tmp/assets/conf/build-de
             $(cat /tmp/assets/conf/build-deps.packages) 
 fi
 
-if [ -e /tmp/assets/conf/debian.packages ] && [ -s /tmp/assets/conf/debian.packages ] ; then
-	echo "[INFO] Install Debian packages" && \
+if [ -e /tmp/assets/conf/ubuntu.packages ] && [ -s /tmp/assets/conf/ubuntu.packages ] ; then
+	echo "[INFO] Install Ubuntu packages" && \
         apt-get install -y --no-install-recommends \
-            $(cat /tmp/assets/conf/debian.packages) 
+            $(cat /tmp/assets/conf/ubuntu.packages) 
 fi
 
 if [ -e /tmp/assets/conf/python.packages ] && [ -s /tmp/assets/conf/python.packages ] ; then
